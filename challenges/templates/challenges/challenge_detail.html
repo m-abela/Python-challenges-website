@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ challenge.title }}</title>
+</head>
+<body>
+    <h1>{{ challenge.title }}</h1>
+    <p>{{ challenge.description }}</p>
+    <form action="{% url 'submit_solution' challenge.id %}" method="post">
+        {% csrf_token %}
+        <label for="solution">Submit your solution:</label>
+        <textarea id="solution" name="solution"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

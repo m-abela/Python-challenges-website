@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+    <link href="{% static 'challenges/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Challenge</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for challenge in challenges %}
+            <tr>
+                <td><a href="{% url 'challenge_detail' challenge.id %}">{{ challenge.title }}</a></td>
+                <td>{{ challenge.description }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

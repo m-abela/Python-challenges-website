@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+</head>
+<body>
+
+<h1>Student Leaderboard</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Student Name</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student.user.username }}</td>
+            <td>{{ student.points }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
